@@ -1,3 +1,7 @@
+package distribution.base;
+
+import distribution.ISender;
+import distribution.ITopic;
 
 public class BaseSender implements ISender {
 	
