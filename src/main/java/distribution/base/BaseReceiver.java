@@ -1,3 +1,7 @@
+package distribution.base;
+
+import distribution.IReceiver;
+import distribution.ITopic;
 
 public class BaseReceiver implements IReceiver {
 	private ITopic topic;

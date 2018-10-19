@@ -1,3 +1,4 @@
+package distribution;
 
 public interface ITopic {
 	public void write(Object object);
