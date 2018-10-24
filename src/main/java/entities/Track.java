@@ -1,6 +1,7 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -18,7 +19,7 @@ public class Track implements Serializable {
 		super();
 		this.id = id;
 		this.fused = fused;
-		this.sightingIds = sightingIds;
+		this.sightingIds = Collections.unmodifiableList(sightingIds);
 	}
 
 	@Override

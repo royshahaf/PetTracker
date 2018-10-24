@@ -1,5 +1,7 @@
 package tracking;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -55,11 +57,51 @@ public class AveragingTracker implements ITracker {
 	}
 
 	public static final class TimeInfo {
-		public int counter = 0;
-		public double averagedX = 0;
-		public double averagedY = 0;
-		public double averagedZ = 0;
-		public List<UUID> ids = new LinkedList<>();
+		private int counter = 0;
+		private double averagedX = 0;
+		private double averagedY = 0;
+		private double averagedZ = 0;
+		private List<UUID> ids = new LinkedList<>();
+
+		public int getCounter() {
+			return counter;
+		}
+
+		public void setCounter(int counter) {
+			this.counter = counter;
+		}
+
+		public double getAveragedX() {
+			return averagedX;
+		}
+
+		public void setAveragedX(double averagedX) {
+			this.averagedX = averagedX;
+		}
+
+		public double getAveragedY() {
+			return averagedY;
+		}
+
+		public void setAveragedY(double averagedY) {
+			this.averagedY = averagedY;
+		}
+
+		public double getAveragedZ() {
+			return averagedZ;
+		}
+
+		public void setAveragedZ(double averagedZ) {
+			this.averagedZ = averagedZ;
+		}
+
+		public List<UUID> getIds() {
+			return new ArrayList<>(ids);
+		}
+
+		public void setIds(List<UUID> ids) {
+			this.ids = new ArrayList<>(ids);
+		}
 
 		public void update(Sighting sighting) {
 			averagedX *= counter;
