@@ -27,3 +27,14 @@ BaseReceover - an implementation of IReceiver that simply uses an ITopic directl
 ITracker - an interface to be implemented by all future trackers, currently supports: fuse(Sighting sighting) which receives new raw data to update some internal state, and register(ITopic topic) which adds a new stream of data to be fused
 
 AveragingTracker - a signle object, averaging tracker which, when fusing a new sighting, averages the sighting with previous sightings that have the same timestamp and sends the new averaged track on its track topic
+
+
+In plan:
+1. Implementing other distribution solutions (over Kafka, over Redis, etc)
+2. Implementing more sophisticated trackers (capable of clustering, capable of running on longer streams of raw data, etc)
+3. Implementing monitoring (metrics, logs/structured logs, etc)
+4. Using different containers (Dropwizard, Spring, etc)
+5. Adding support for developers that prefer gradle
+6. Creating prettier visualizations (currently only have a callback that prints to System.out)
+7. Implementing configuration solutions (with zookeeper, consul, etc)
+8. and much, much more
