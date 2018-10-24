@@ -32,15 +32,15 @@ public class TestBaseDistribution {
 		thread.start();
 		sender.send("Hello World");
 		thread.join();
+		assertTrue(((BaseCallback) callback).getCounter() > 0);
 	}
 	
 	@Test
 	public void testReadInterruption() {
 		ITopic topic = new BaseTopic();
 		IReceiver receiver = new BaseReceiver(topic);
-		Thread thread = new Thread(() -> receiver.receive());
-		thread.start();
-		thread.interrupt();
+		Thread.currentThread().interrupt();
+		receiver.receive();
 	}
 
 }

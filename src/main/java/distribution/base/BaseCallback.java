@@ -7,14 +7,20 @@ import distribution.ICallback;
 
 public class BaseCallback implements ICallback {
 
-	Lock lock = new ReentrantLock();
+	private final Lock lock = new ReentrantLock();
+	private int counter = 0;
 	
+	public int getCounter() {
+		return counter;
+	}
+
 	public BaseCallback() {
 		lock.lock();
 	}
 	
 	@Override
 	public void onDataArrival(Object object) {
+		counter++;
 		lock.unlock();
 	}
 
