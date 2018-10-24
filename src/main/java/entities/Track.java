@@ -13,7 +13,7 @@ public class Track implements Serializable {
 	private static final long serialVersionUID = 466704459508002602L;
 	public final int id;
 	public final Sighting fused;
-	public final List<UUID> sightingIds;
+	private final List<UUID> sightingIds;
 	
 	public Track(int id, Sighting fused, List<UUID> sightingIds) {
 		super();
