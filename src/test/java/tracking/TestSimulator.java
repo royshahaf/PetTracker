@@ -15,7 +15,6 @@ import simulator.LineSightingGenerator;
 import simulator.RandomTimePicker;
 import simulator.ServiceSimulator;
 import testUtils.CollectingCallback;
-import testUtils.PrintingCallback;
 
 public class TestSimulator {
 
@@ -23,7 +22,6 @@ public class TestSimulator {
 	public void testSimulator() {
 		ITopic topic = new BaseTopic();
 		ISender sender = new BaseSender(topic);
-		topic.register(new PrintingCallback());
 		CollectingCallback callback = new CollectingCallback();
 		topic.register(callback);
 		int numberOfSightings = 1000;
