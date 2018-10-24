@@ -1,4 +1,5 @@
 package distribution.base;
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -8,9 +9,9 @@ import distribution.ICallback;
 import distribution.ITopic;
 
 public class BaseTopic implements ITopic {
-	LinkedBlockingQueue<Object> objects = new LinkedBlockingQueue<>();
-	Logger logger = Logger.getLogger(getClass().getName());
-	Set<ICallback> callbacks = new HashSet<>();
+	private final LinkedBlockingQueue<Object> objects = new LinkedBlockingQueue<>();
+	private final Logger logger = Logger.getLogger(getClass().getName());
+	private final Set<ICallback> callbacks = new HashSet<>();
 
 	@Override
 	public void write(Object object) {
