@@ -41,11 +41,10 @@ public class TestAveragingTracker {
 	}
 
 	@Test
-	public void test() {
+	public void testTracker() {
 		ITopic sightingTopic = new BaseTopic();
 		ISender sightingSender = new BaseSender(sightingTopic);
 		ITopic trackTopic = new BaseTopic();
-		;
 		ISender trackSender = new BaseSender(trackTopic);
 		ITracker tracker = new AveragingTracker(new Service("tracker", 1, "averaging", new Location(1, 1, 1)),
 				trackSender);
@@ -55,6 +54,7 @@ public class TestAveragingTracker {
 		int numberOfSightings = 1000;
 		int minTime = 100;
 		int maxTime = 200;
+		sightingSender.send("Should not be received");
 		ServiceSimulator.generateSightings(sightingSender, new Service("test", 5, "silly", new Location(0, 0, 0)),
 				numberOfSightings, new RandomTimePicker(minTime, maxTime),
 				new LineSightingGenerator(new Location(0, 0, 0), new Location(1, 1, 1), new Location(1, 1, 1)));
